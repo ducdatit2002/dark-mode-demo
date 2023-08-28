@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dark Mode</title>
+   <link rel="stylesheet" href="./">
+</head>
+<body class="">
+   <div id="wrapper">
+      <div id="header">
+         <div class="container d-flex justify-content-between align-items-center">
+            <a href="" id="logo">Unitop.vn</a>
+            <button id="switch-mode">
+               <i class="bi bi-moon-stars-fill"></i>
+            </button>
+         </div>
+      </div>
+      <div id="content" class="container">
+         <h1>Dark Mode website Html, Css and Javascript Unitop.vn</h1>
+         <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id nihil dolore ex modi ab cum assumenda, velit cupiditate voluptatibus nisi doloremque fuga perspiciatis officia ipsa recusandae libero, dolores blanditiis atque!</p>
+         <p>Expedita, nobis aperiam nam eveniet mollitia libero voluptates sapiente ab ipsa velit maxime qui est id obcaecati sed quasi atque? Laboriosam eaque aliquid suscipit non et, harum excepturi voluptates fugiat.</p>
+         <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id nihil dolore ex modi ab cum assumenda, velit cupiditate voluptatibus nisi doloremque fuga perspiciatis officia ipsa recusandae libero, dolores blanditiis atque!</p>
+         <p>Expedita, nobis aperiam nam eveniet mollitia libero voluptates sapiente ab ipsa velit maxime qui est id obcaecati sed quasi atque? Laboriosam eaque aliquid suscipit non et, harum excepturi voluptates fugiat.</p>
+      </div>
+   </div>
+   
+</body>
+<script>
+   const body = document.body;
+   const switch_mode = document.querySelector('#switch-mode i');
+   // Load mode 
+   let mode = localStorage.getItem('darkmode');
+   if(mode=='true'){
+      body.classList.add('dark');
+      switch_mode.className = "bi bi-brightness-high-fill";
+   }
+   switch_mode.addEventListener('click', () =>{
+      switch_mode.classList.toggle('bi-moon-stars-fill');
+      switch_mode.classList.toggle('bi-brightness-high-fill');
+      let mode = body.classList.toggle('dark');
+      // save mode 
+      localStorage.setItem('darkmode', mode);
+   });
+</script>
+</html>
